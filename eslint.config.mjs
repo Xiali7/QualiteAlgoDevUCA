@@ -1,11 +1,11 @@
-const js = require("@eslint/js");
+import js from "@eslint/js";
 
-module.exports = [
+export default [
     js.configs.recommended,
     {
         languageOptions: {
-            ecmaVersion: "latest", // Supporte les dernières fonctionnalités JS
-            sourceType: "module", // Indique que ton projet utilise des modules ES
+            ecmaVersion: "latest",
+            sourceType: "module",
             globals: {
                 require: "readonly",
                 module: "readonly",

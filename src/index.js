@@ -22,7 +22,7 @@ app.get("/posts", (req, res) => {
 app.post("/posts", (req, res) => {
     const post = postService.createPost(req.body);
     console.log(post);
-    res.redirect(`/posts`);
+    res.redirect("/posts");
 });
 
 app.get("/posts/new", (req, res) => {
