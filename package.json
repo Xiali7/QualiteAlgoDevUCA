@@ -4,8 +4,10 @@
     "description": "Projet noté - Qualité algorithmique",
     "main": "src/index.js",
     "scripts": {
-        "start": "ts-node src/index.ts",
-        "dev": "ts-nodem src/index.ts",
+        "build": "tsc",
+        "watch": "tsc --watch",
+        "start": "node dist/index.js",
+        "dev": "ts-node src/index.ts",
         "prepare": "husky install",
         "test": "echo 'Running tests...' && exit 0",
         "format": "prettier --write .",

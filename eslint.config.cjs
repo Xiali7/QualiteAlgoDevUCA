@@ -19,7 +19,19 @@ module.exports = [
             semi: ["error", "always"],
             "comma-dangle": ["error", "never"],
             "max-len": ["error", { code: 180 }],
-            "no-unused-vars": ["warn"]
-        }
+            "no-unused-vars": ["warn"],
+            // TypeScript
+            "@typescript-eslint/no-unused-vars": ["warn"],
+            "@typescript-eslint/explicit-module-boundary-types": "off"
+        },
+
+        overrides: [
+            {
+                files: ["*.ts", "*.tsx"],
+                parser: "@typescript-eslint/parser",
+                plugins: ["@typescript-eslint"],
+                rules: {}
+            }
+        ]
     }
 ];
