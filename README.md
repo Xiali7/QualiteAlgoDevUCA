@@ -1,3 +1,6 @@
+Corentin GUILBERT  
+Célian JUBLOT  
+
  ## Configuration de VSCode pour le formatage automatique lors de la sauvegarde :  
 
 ### Installation et activation de Prettier
