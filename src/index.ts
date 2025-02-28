@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import PostService from "./services/PostService";
+const Sentry = require("@sentry/node");
 
 const app: express.Application = express();
 
@@ -61,6 +62,13 @@ app.post("/posts/:id", (req: Request, res: Response): void => {
 
     res.redirect(`/posts/${req.params.id}`);
 });
+
+//test sentry
+// try {
+//     foo();
+// } catch (e) {
+//     Sentry.captureException(e);
+// }
 
 const PORT: number | string = process.env.PORT || 3009;
 app.listen(PORT, (): void => {
