@@ -1,3 +1,6 @@
+Corentin GUILBERT  
+Célian JUBLOT  
+
  ## Configuration de VSCode pour le formatage automatique lors de la sauvegarde :  
 
 ### Installation et activation de Prettier
@@ -92,3 +95,27 @@ Enregistrer une timeline d'exécution du site pour analyser sa vitesse et ses pe
 - **Réponses non 2xx** : 116 076
 - **Données transférées** : 48.6 MB
 - **Nombre d’échantillons** : 30 (1 par seconde)
+
+--------------------------------------   
+
+## Report d'erreurs avec Sentry
+
+**Ajout d'une erreur volontaire** :
+```
+app.get("/cause-error", (req: Request, res: Response): void => {
+    try {
+        foo(); // Cette fonction n'existe pas
+    } catch (error) {
+        Sentry.captureException(error);
+        res.status(500).send("Une erreur s'est produite. Vérifie Sentry pour plus de détails.");
+    }
+});
+```
+
+**Lancement** :
+>> npm start
+
+**Se rendre à la page d'erreur** :
+_http://localhost:3009/cause-error_
+
+
